@@ -34,8 +34,8 @@ const ProductCard : React.FC<Props> = ({ image, title, type, description, height
     const dispatch :ThunkDispatch<{}, {}, any> = useDispatch();
 
     return (
-        <Card style={{ width: '320px', height: '560px', padding: '10px', marginBottom: '20px'}}>
-            <Card.Img variant = 'top' src = {image} style = {{ height: '230px', width: '100%'}}/>
+        <Card style={{ width: '320px', height: '590px', padding: '10px', marginBottom: '20px'}}>
+            <Card.Img variant = 'top' src = {image} style = {{ height: '260px', width: '100%'}}/>
             <Card.Body style = {{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <Card.Title>{title}</Card.Title>
                 <Card.Text>{description}</Card.Text>
