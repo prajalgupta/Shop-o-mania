@@ -8,5 +8,5 @@ export type CartProductType = {
   price: number,
   rating: number,
   id: string
-  amount: number;
+  quantity: number;
 };

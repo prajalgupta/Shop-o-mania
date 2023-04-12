@@ -2,7 +2,7 @@ import { Dispatch } from 'react';
 import { Product } from '../../models/Product';
 import { Action, ActionType } from './actionTypes';
 
-export const AddProduct = (clickedItem: Product) => {
+export const AddProduct = (clickedItem : Product) => {
   return (dispatch : Dispatch<Action>) => {
     dispatch({
       type: ActionType.ADD_PRODUCT,
@@ -11,7 +11,7 @@ export const AddProduct = (clickedItem: Product) => {
   }
 };
 
-export const RemoveProduct = (clickedItem: Product) => {
+export const RemoveProduct = (clickedItem : Product) => {
   return (dispatch : Dispatch<Action>) => {
     dispatch({
       type: ActionType.REMOVE_PRODUCT,

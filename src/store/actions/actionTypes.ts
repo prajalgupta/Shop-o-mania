@@ -12,10 +12,12 @@ interface addProduct {
     type: ActionType.ADD_PRODUCT;
     payload: Product;
 }
+
 interface removeProduct {
     type: ActionType.REMOVE_PRODUCT;
     payload: Product;
 }
+
 interface startFetching {
     type: ActionType.START_FETCHING;
 }
@@ -31,4 +33,4 @@ interface setError {
      
 }
 
-export type Action = addProduct | removeProduct | startFetching| setProducts|setError ;
+export type Action = addProduct | removeProduct | startFetching | setProducts | setError ;

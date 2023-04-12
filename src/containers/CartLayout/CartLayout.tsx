@@ -12,7 +12,7 @@ const CartLayout: React.FC = () => {
 
         let totalPrice : number = 0;
         cartItems.map(cartItem => {
-            totalPrice += cartItem.price * cartItem.amount;
+            totalPrice += cartItem.price * cartItem.quantity;
         });
         return totalPrice;
     }
@@ -30,12 +30,12 @@ const CartLayout: React.FC = () => {
                     price = {cartItem.price}
                     rating = {cartItem.rating}
                     id = {cartItem.id}
-                    amount = {cartItem.amount}
+                    amount = {cartItem.quantity}
                     key={cartItem.id}
                 />)
             ) : null}
             <h5 style={ {marginLeft: '27px'} }>Total Amount : {getTotalPrice(cartItems).toFixed(2)}</h5>
-            <Button variant = 'primary' style={ {marginLeft: '27px', marginTop: '10px'} }> PROCEED TO BUY </Button>
+            <Button variant = 'primary' style={ {marginLeft: '27px', marginTop: '10px', marginBottom: '20px'} }> PROCEED TO BUY </Button>
         </div>
     );
 };

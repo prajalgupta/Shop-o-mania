@@ -19,12 +19,12 @@ const cartReducer = (
         let alreadyInCart : boolean = false;
         cartItemsCopy.map(item => {
           if(item.id == action.payload.id) {
-            item.amount += 1;
+            item.quantity += 1;
             alreadyInCart = true;
           }
         });
         if (!alreadyInCart) {
-          cartItemsCopy.push({ ...action.payload, amount: 1 });
+          cartItemsCopy.push({ ...action.payload, quantity: 1 });
         }
         return {
           ...state,
@@ -38,8 +38,8 @@ const cartReducer = (
         const cartItemsCopy2 = [...state.cartItems];
         cartItemsCopy2.forEach((item, index) => {
         if (item.id === action.payload.id) {
-          if (item.amount! > 1) {
-            item.amount! -= 1;
+          if (item.quantity! > 1) {
+            item.quantity! -= 1;
           } else {
             cartItemsCopy2.splice(index, 1);
           }}
