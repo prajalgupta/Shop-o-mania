@@ -16,9 +16,21 @@ const CartLayout: React.FC = () => {
         });
         return totalPrice;
     }
+    const getCartCount = (cartItems : CartProductType[]) : number => {
+
+        let cartCount : number = 0;
+        cartItems.map(cartItem => {
+            cartCount += cartItem.quantity;
+        });
+        return cartCount;
+    }
+
+    let cartCount : number = getCartCount(cartItems);
+    let itemText : String = cartCount>1?"Items":"Item";
 
     return (
-        <div>
+        cartCount>0?
+        <div style={{paddingBottom:"40px"}}>
             {cartItems ? (
                 cartItems.map(cartItem => <CartItem
                     title = {cartItem.title} 
@@ -35,7 +47,11 @@ const CartLayout: React.FC = () => {
                 />)
             ) : null}
             <h5 style={ {marginLeft: '27px'} }>Total Amount : {getTotalPrice(cartItems).toFixed(2)}</h5>
-            <Button variant = 'primary' style={ {marginLeft: '27px', marginTop: '10px', marginBottom: '20px'} }> PROCEED TO BUY </Button>
+            <Button variant = 'primary' style={ {marginLeft: '27px', marginTop: '10px'} }> PROCEED TO BUY ({cartCount} {itemText})</Button>
+        </div>
+        :
+        <div style={{textAlign:"center",marginTop:"40px"}}>
+            <h2>Your Shopping Cart is empty.</h2>
         </div>
     );
 };
