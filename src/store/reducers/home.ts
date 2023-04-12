@@ -1,5 +1,4 @@
 import { ProductAction } from "../../models/ProductAction";
-import {CartProductState} from "../../models/CartProductState"
 import { Action, ActionType } from "../actions/actionTypes";
 import { ProductState } from "../../models/ProductState";
 

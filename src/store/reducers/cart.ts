@@ -38,24 +38,27 @@ const cartReducer = (
         return x;
       }
 
-      // case ActionType.REMOVE_PRODUCT:{
-      //   const cartItemsCopy2 = [...state.cartItems];
-      //   cartItemsCopy2.forEach((item, index) => {
-      //   if (item.id === action.payload.product.id) {
-      //     if (item.inCartQuantity! > 1) {
-      //       item.inCartQuantity! -= 1;
-      //     } else {
-      //       cartItemsCopy2.splice(index, 1);
-      //     }
-      //   }
-      // });
-      // }
-      //   return {
-      //       ...state,
-      //       products: cartItemsCopy2,
-      //   }
-    default: return state;
-  }
-} 
+      case ActionType.REMOVE_PRODUCT: {
 
+        const cartItemsCopy2 = [...state.cartItems];
+        cartItemsCopy2.forEach((item, index) => {
+        if (item.id === action.payload.id) {
+          if (item.amount! > 1) {
+            item.amount! -= 1;
+          } else {
+            cartItemsCopy2.splice(index, 1);
+          }
+        }
+      });
+    
+        const y = {
+          ...state,
+          cartItems: cartItemsCopy2
+        }
+        console.log(y);
+        return y;
+      }
+      default: return state;
+    }
+  };
 export default cartReducer;
