@@ -41,17 +41,17 @@ const CartItem: React.FC<Props> = ({image, title, type, description, height, wid
             <Card.Text>{description}</Card.Text>
             <Card.Text>Price = {price}</Card.Text>
             <Card.Text> Quantity: 
+            <Button variant = 'primary' style = {{ backgroundColor: 'black', color: 'white', margin:'10px' }} 
+                onClick={(e) => {
+                  e.preventDefault();
+                  dispatch(RemoveProduct(currentProduct));
+              }}> - </Button>
+              {amount}
               <Button variant = 'primary' style= {{ backgroundColor: 'black', color: 'white', margin:'10px' }} 
                 onClick = { (e) => {
                   e.preventDefault();
                   dispatch(AddProduct(currentProduct));
               }}> + </Button> 
-              {amount}
-              <Button variant = 'primary' style = {{ backgroundColor: 'black', color: 'white', margin:'10px' }} 
-                onClick={(e) => {
-                  e.preventDefault();
-                  dispatch(RemoveProduct(currentProduct));
-              }}> - </Button>
             </Card.Text>
         </Card.Body>
     </Card>

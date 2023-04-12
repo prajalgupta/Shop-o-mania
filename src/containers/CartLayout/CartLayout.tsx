@@ -26,7 +26,7 @@ const CartLayout: React.FC = () => {
     }
 
     let cartCount : number = getCartCount(cartItems);
-    let itemText : String = cartCount>1?"Items":"Item";
+    let itemText : String = cartCount > 1 ? 'Items':'Item';
 
     return (
         cartCount>0?

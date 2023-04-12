@@ -4,7 +4,6 @@ import { ActionType } from '../actions/actionTypes';
 
 const initialState: CartProductState = {
   cartItems: [],
-  error: null
 }
 
 const cartReducer = (
