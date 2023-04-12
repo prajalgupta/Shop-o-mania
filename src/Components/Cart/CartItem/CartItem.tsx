@@ -36,10 +36,8 @@ const CartItem: React.FC<Props> = ({image, title, type, description, height, wid
   const dispatch :ThunkDispatch<{}, {}, any> = useDispatch();
 
   return (
-    <Card style={{ width: '900px', height: '180px', margin: '10px', display: 'flex', flexDirection: 'row'}}>
-        <div style={{height: '100%', width: '20%'}}>
-        <Card.Img variant="top" src = {image} style={{height: '100%', width: '100%'}}/>
-        </div>
+    <Card style={{ width: '800px', height: '230px', margin: '30px', display: 'flex', flexDirection: 'row'}}>
+        <Card.Img variant="top" src = {image} style={{height: '100%', width: '230px'}}/>
         <div style={{height: '100%', width: '80%'}} >
         <Card.Body>
             <Card.Title>{title}</Card.Title>

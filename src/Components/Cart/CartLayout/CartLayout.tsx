@@ -10,7 +10,6 @@ const CartLayout: React.FC = () => {
 
     return (
         <Fragment>
-            <h1>Your Cart </h1>
             {cartItems ? (
                 cartItems.map(cartItem => <CartItem
                     title = {cartItem.title} 
@@ -26,8 +25,8 @@ const CartLayout: React.FC = () => {
                     key={cartItem.id}
                 />)
             ) : null}
-            <Button variant = "primary"> CANCEL </Button>
-            <Button variant = "primary"> CONTINUE </Button>
+            <Button variant = "primary" style={{margin: '27px'}}> CANCEL </Button>
+            <Button variant = "primary" style={{margin: '27px'}}> CONTINUE </Button>
         </Fragment>
     );
 }

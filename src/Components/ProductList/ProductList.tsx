@@ -7,7 +7,7 @@ const ProductList : React.FC = () => {
     const products = useSelector((state : RootState) =>  state.home.products);
 
     return (
-        <div style={{width: '80%', display: 'flex', flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
+        <div style={{width: '80%', margin: 'auto', display: 'flex', flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
                 {products ? (
                     products.map(product => <ProductCard 
                         image={product.filename}
