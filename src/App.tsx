@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import Layout from './Components/Layout/Layout';
 import {Routes, Route, Link } from "react-router-dom";
-import ProductList from './Components/ProductList/ProductList';
-import CartLayout from './Components/Cart/CartLayout/CartLayout';
+import CartLayout from './containers/CartLayout/CartLayout';
+import HomeLayout from './containers/HomeLayout/HomeLayout';
 
 const App = () => {
 
@@ -10,7 +10,7 @@ const App = () => {
     <div>
       <Layout>
         <Routes>
-          <Route path = '/' Component = {ProductList}/>
+          <Route path = '/' Component = {HomeLayout}/>
           <Route path = '/cart' Component = {CartLayout} />
         </Routes>
       </Layout>

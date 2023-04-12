@@ -1,8 +1,8 @@
-import ProductCard from "../ProductCard/ProductCard"
+import ProductCard from "../../Components/ProductCard/ProductCard"
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../..';
 
-const ProductList : React.FC = () => {
+const HomeLayout : React.FC = () => {
     
     const products = useSelector((state : RootState) =>  state.home.products);
 
@@ -26,4 +26,4 @@ const ProductList : React.FC = () => {
     );
 }
 
-export default ProductList;
+export default HomeLayout;

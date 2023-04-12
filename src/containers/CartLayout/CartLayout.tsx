@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { Button } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../..';
-import CartItem from '../CartItem/CartItem';
+import { RootState } from '../..';
+import CartItem from '../../Components/CartItem/CartItem';
 
 const CartLayout: React.FC = () => {
     

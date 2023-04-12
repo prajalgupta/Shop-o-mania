@@ -1,9 +1,9 @@
 import { Fragment } from "react";
-import ProductList from "../../ProductList/ProductList";
+import ProductList from "../../containers/HomeLayout/HomeLayout";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { AddProduct, RemoveProduct} from '../../../store/actions/cart';
-import {Product} from '../../../models/Product';
+import { AddProduct, RemoveProduct} from '../../store/actions/cart';
+import {Product} from '../../models/Product';
 import { useDispatch } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk'
 

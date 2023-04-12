@@ -7,7 +7,7 @@ import { fetchProducts } from '../../store/actions/home';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk'
 import { ProductState } from '../../models/ProductState';
-import ProductList from '../ProductList/ProductList';
+import ProductList from '../../containers/HomeLayout/HomeLayout';
 
 // export const useAppDispatch = () => useAppDispatch<AppDispatch>();
 
