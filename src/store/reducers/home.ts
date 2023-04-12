@@ -1,16 +1,17 @@
 import { ProductAction } from "../../models/ProductAction";
 import {CartProductState} from "../../models/CartProductState"
 import { Action, ActionType } from "../actions/actionTypes";
+import { ProductState } from "../../models/ProductState";
 
-const initialState: CartProductState = {
+const initialState: ProductState = {
   products: [],
   error: null
 }
 
 const homeReducer = (
-    state: CartProductState = initialState,
+    state: ProductState = initialState,
     action: ProductAction
-  ): CartProductState => {
+  ): ProductState => {
     
     switch (action.type) {
       case ActionType.START_FETCHING:

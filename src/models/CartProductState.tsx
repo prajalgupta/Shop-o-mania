@@ -1,4 +1,7 @@
+import { CartProductType } from "./CartProduct";
+import { Product } from "./Product";
+
 export type CartProductState = {
-    products: string,
+    cartItems: CartProductType[],
     error: string | null
 };

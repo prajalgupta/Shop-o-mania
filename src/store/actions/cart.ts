@@ -1,19 +1,13 @@
-import React from 'react';
+import React, { Dispatch } from 'react';
 import { CartProductType } from '../../models/CartProduct';
+import { Product } from '../../models/Product';
+import { Action, ActionType } from './actionTypes';
 
-const AddProduct = (clickedItem: CartProductType) => {
-    const isItemInCart = id.find(item => item.id === clickedItem.id);
-
-    if (isItemInCart) {
-        return item.map(item =>
-        item.id === clickedItem.id
-        );
-      }
-      
-    return [ { ...clickedItem, amount: }];
-    };
-
-    
-const RemoveProduct = (id: number) => {
-        if (item.id === id) {}
-  };
+export const AddProduct = (clickedItem: Product) => {
+  return (dispatch : Dispatch<Action>) => {
+    dispatch({
+      type: ActionType.ADD_PRODUCT,
+      payload: clickedItem
+    });
+  }
+}

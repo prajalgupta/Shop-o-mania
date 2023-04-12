@@ -1,8 +1,12 @@
 export type CartProductType = {
-    id: number;
-    category: string;
-    image: string;
-    price: number;
-    title: string;
-    amount: number;
-  };
+  title: string,
+  type: string,
+  description: string,
+  filename: string,
+  height: number,
+  width: number,
+  price: number,
+  rating: number,
+  id: string
+  amount: number;
+};

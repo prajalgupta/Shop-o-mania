@@ -16,6 +16,10 @@ const ProductList : React.FC = () => {
                         description={product.description}
                         price={product.price}
                         rating={product.rating}
+                        height={product.height}
+                        width={product.width}
+                        id={product.id}
+                        key = {product.id}
                     />)
                 ) : null}
             </div>
