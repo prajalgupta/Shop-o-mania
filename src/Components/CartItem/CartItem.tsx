@@ -38,7 +38,6 @@ const CartItem: React.FC<Props> = ({image, title, type, description, height, wid
         <Card.Img variant = 'top' src = {image} style = {{ height: '100%', width: '230px' }}/>
         <Card.Body style = {{ height: '100%', width: '80%' }}>
             <Card.Title>{title}</Card.Title>
-            <Card.Text>{description}</Card.Text>
             <Card.Text>Price = {price}</Card.Text>
             <Card.Text> Quantity: 
             <Button variant = 'primary' style = {{ backgroundColor: 'black', color: 'white', margin:'10px' }} 
