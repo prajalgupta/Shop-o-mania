@@ -35,7 +35,7 @@ const ProductCard : React.FC<Props> = ({ image, title, type, description, height
 
     return (
         <Card style={{ width: '300px', height: '450px', padding: '10px', marginBottom: '20px'}}>
-            <Card.Img variant = 'top' src = {image} style = {{ height: '280px', width: '100%'}}/>
+            <Card.Img variant = 'top' src = {image} style = {{ height: '250px', width: '100%'}}/>
             <Card.Body style = {{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <Card.Title>{title}</Card.Title>
                 <Card.Text style = {{ marginBottom: '0px'}}>Price: Rs {price}</Card.Text>

@@ -17,7 +17,7 @@ const Layout : React.FC<Props> = ({children}) => {
     return (
         <Fragment>
             <NavigationBar></NavigationBar>
-            <div style = {{ paddingTop: '80px', width: '100%', height: '100vh', background: '#f7f5f5' }}>
+            <div style = {{ paddingTop: '80px', width: '100%', height: '100%', minHeight: '100vh', background: '#f7f5f5' }}>
                 {children}
             </div>
         </Fragment>
