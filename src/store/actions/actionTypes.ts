@@ -1,4 +1,4 @@
-import { Product } from "../../models/Product";
+import { Product } from '../../models/Product';
 
 export enum ActionType {
     ADD_PRODUCT = 'ADD_PRODUCT',

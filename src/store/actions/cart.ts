@@ -1,5 +1,4 @@
-import React, { Dispatch } from 'react';
-import { CartProductType } from '../../models/CartProduct';
+import { Dispatch } from 'react';
 import { Product } from '../../models/Product';
 import { Action, ActionType } from './actionTypes';
 
@@ -10,7 +9,7 @@ export const AddProduct = (clickedItem: Product) => {
       payload: clickedItem
     });
   }
-}
+};
 
 export const RemoveProduct = (clickedItem: Product) => {
   return (dispatch : Dispatch<Action>) => {
@@ -19,4 +18,4 @@ export const RemoveProduct = (clickedItem: Product) => {
       payload: clickedItem
     });
   }
-}
+};

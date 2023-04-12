@@ -1,7 +1,7 @@
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import {Product} from '../../models/Product';
 import { AddProduct } from '../../store/actions/cart';
-import {Product} from '../../models/Product'
 import { useDispatch } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 
@@ -17,7 +17,7 @@ type Props = {
     id: string
 };
 
-const ProductCard : React.FC<Props> = ({image, title, type, description, height, width, price, rating, id}) => {
+const ProductCard : React.FC<Props> = ({ image, title, type, description, height, width, price, rating, id }) => {
 
     const currentProduct : Product = {
         title: title, 
@@ -34,21 +34,21 @@ const ProductCard : React.FC<Props> = ({image, title, type, description, height,
     const dispatch :ThunkDispatch<{}, {}, any> = useDispatch();
 
     return (
-        <Card style={{width: '300px', height: '450px', padding: '10px', marginBottom: '20px'}}>
-            <Card.Img variant="top" src = {image} style={{height: '280px', width: '100%'}}/>
-            <Card.Body style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <Card style={{ width: '300px', height: '450px', padding: '10px', marginBottom: '20px'}}>
+            <Card.Img variant = 'top' src = {image} style = {{ height: '280px', width: '100%'}}/>
+            <Card.Body style = {{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <Card.Title>{title}</Card.Title>
-                <Card.Text style={{marginBottom: '0px'}}>Price: Rs {price}</Card.Text>
-                <Card.Text style={{marginBottom: '15px'}}>Rating: {rating}</Card.Text>
-                <Button variant="primary" onClick={(e) => {
+                <Card.Text style = {{ marginBottom: '0px'}}>Price: Rs {price}</Card.Text>
+                <Card.Text style = {{ marginBottom: '15px'}}>Rating: {rating}</Card.Text>
+                <Button variant = 'primary' onClick = { (e) => {
                     e.preventDefault();
                     dispatch(AddProduct(currentProduct));
                 }}>
-                    Add to Cart
+                Add to Cart
                 </Button>
             </Card.Body>
         </Card>
     );
-}
+};
 
 export default ProductCard;

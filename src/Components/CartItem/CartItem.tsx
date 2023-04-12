@@ -1,11 +1,9 @@
-import { Fragment } from "react";
-import ProductList from "../../containers/HomeLayout/HomeLayout";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { AddProduct, RemoveProduct} from '../../store/actions/cart';
 import {Product} from '../../models/Product';
+import { AddProduct, RemoveProduct} from '../../store/actions/cart';
 import { useDispatch } from 'react-redux';
-import { ThunkDispatch } from 'redux-thunk'
+import { ThunkDispatch } from 'redux-thunk';
 
 type Props = {
   title: string,
@@ -36,30 +34,28 @@ const CartItem: React.FC<Props> = ({image, title, type, description, height, wid
   const dispatch :ThunkDispatch<{}, {}, any> = useDispatch();
 
   return (
-    <Card style={{ width: '800px', height: '230px', margin: '30px', display: 'flex', flexDirection: 'row'}}>
-        <Card.Img variant="top" src = {image} style={{height: '100%', width: '230px'}}/>
-        <div style={{height: '100%', width: '80%'}} >
-        <Card.Body>
+    <Card style = {{ width: '800px', height: '230px', margin: '30px', display: 'flex', flexDirection: 'row' }}>
+        <Card.Img variant = 'top' src = {image} style = {{ height: '100%', width: '230px' }}/>
+        <Card.Body style = {{ height: '100%', width: '80%' }}>
             <Card.Title>{title}</Card.Title>
             <Card.Text>{description}</Card.Text>
             <Card.Text>Price = {price}</Card.Text>
-            <Card.Text>Quantity: 
-              <Button variant="primary" style={{backgroundColor: 'black', color: 'white'}} onClick={(e) => {
+            <Card.Text> Quantity: 
+              <Button variant = 'primary' style= {{ backgroundColor: 'black', color: 'white' }} 
+                onClick = { (e) => {
                   e.preventDefault();
                   dispatch(AddProduct(currentProduct));
-              }}>
-              +
-              </Button> {amount}
-              <Button variant="primary" style={{backgroundColor: 'black', color: 'white'}} onClick={(e) => {
-                e.preventDefault();
-                dispatch(RemoveProduct(currentProduct));
-              }}> -
-              </Button>
+              }}> + </Button> 
+              {amount}
+              <Button variant = 'primary' style = {{ backgroundColor: 'black', color: 'white' }} 
+                onClick={(e) => {
+                  e.preventDefault();
+                  dispatch(RemoveProduct(currentProduct));
+              }}> - </Button>
             </Card.Text>
         </Card.Body>
-        </div>
     </Card>
-  );
-}
+  )
+};
 
 export default CartItem;

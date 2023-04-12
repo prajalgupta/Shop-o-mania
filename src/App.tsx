@@ -1,4 +1,3 @@
-import React, {Component} from 'react';
 import Layout from './Components/Layout/Layout';
 import {Routes, Route, Link } from "react-router-dom";
 import CartLayout from './containers/CartLayout/CartLayout';

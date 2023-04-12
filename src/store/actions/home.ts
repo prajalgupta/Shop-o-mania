@@ -1,29 +1,5 @@
 import {Dispatch} from 'redux';
-import { Product } from "../../models/Product"
-import { Action, ActionType } from "./actionTypes"
-import { json } from 'stream/consumers';
-import { error } from 'console';
-import { ProductState } from '../../models/ProductState';
-
-/*export const startFetch = () => {
-  return {
-      type: ActionType.START_FETCHING
-  }
-}
-
-export const setProducts = (products:Product[]) => {
-  return {
-      type: ActionType.SET_PRODUCTS,
-      products:products
-  }
-}
-
-export const setError = (error:string) => {
-  return {
-      type: ActionType.SET_ERROR,
-      error: error
-  }
-}*/
+import { Action, ActionType } from './actionTypes';
 
 export const fetchProducts = () => {
   return async (dispatch : Dispatch<Action>) => {
@@ -43,5 +19,5 @@ export const fetchProducts = () => {
       payload : err
     }));
  }
-}
+};
 

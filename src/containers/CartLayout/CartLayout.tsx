@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react';
 import { Button } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { RootState } from '../..';
@@ -9,7 +8,7 @@ const CartLayout: React.FC = () => {
     const cartItems = useSelector((state : RootState) =>  state.cart.cartItems);
 
     return (
-        <Fragment>
+        <div>
             {cartItems ? (
                 cartItems.map(cartItem => <CartItem
                     title = {cartItem.title} 
@@ -25,10 +24,10 @@ const CartLayout: React.FC = () => {
                     key={cartItem.id}
                 />)
             ) : null}
-            <Button variant = "primary" style={{margin: '27px'}}> CANCEL </Button>
-            <Button variant = "primary" style={{margin: '27px'}}> CONTINUE </Button>
-        </Fragment>
+            <Button variant = 'primary' style={ {margin: '27px'} }> CANCEL </Button>
+            <Button variant = 'primary' style={ {margin: '27px'} }> CONTINUE </Button>
+        </div>
     );
-}
+};
 
 export default CartLayout;

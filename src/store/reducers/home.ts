@@ -1,6 +1,6 @@
-import { ProductAction } from "../../models/ProductAction";
-import { Action, ActionType } from "../actions/actionTypes";
-import { ProductState } from "../../models/ProductState";
+import { ProductAction } from '../../models/ProductAction';
+import { Action, ActionType } from '../actions/actionTypes';
+import { ProductState } from '../../models/ProductState';
 
 const initialState: ProductState = {
   products: [],
@@ -30,6 +30,6 @@ const homeReducer = (
         }
       default: return state;
   }
-} 
+};
 
 export default homeReducer;

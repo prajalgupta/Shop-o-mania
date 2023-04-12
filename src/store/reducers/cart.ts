@@ -1,8 +1,6 @@
-import { CartProductType } from "../../models/CartProduct"
-import {CartProductState} from "../../models/CartProductState"
-import { ProductAction } from "../../models/ProductAction"
-import { Action, ActionType } from "../actions/actionTypes"
-import {Product} from "../../models/Product"
+import { CartProductState } from '../../models/CartProductState';
+import { ProductAction } from '../../models/ProductAction';
+import { ActionType } from '../actions/actionTypes';
 
 const initialState: CartProductState = {
   cartItems: [],
@@ -25,17 +23,14 @@ const cartReducer = (
             alreadyInCart = true;
           }
         });
-
         if (!alreadyInCart) {
           cartItemsCopy.push({ ...action.payload, amount: 1 });
         }
-    
-        const x = {
+        return {
           ...state,
           cartItems: cartItemsCopy
         }
-        console.log(x);
-        return x;
+        
       }
 
       case ActionType.REMOVE_PRODUCT: {
@@ -47,18 +42,15 @@ const cartReducer = (
             item.amount! -= 1;
           } else {
             cartItemsCopy2.splice(index, 1);
-          }
-        }
-      });
-    
-        const y = {
+          }}
+        });
+        return {
           ...state,
           cartItems: cartItemsCopy2
         }
-        console.log(y);
-        return y;
       }
+
       default: return state;
-    }
-  };
+  }};
+
 export default cartReducer;
